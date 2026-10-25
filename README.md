@@ -53,5 +53,27 @@ Chay file `scripts/auto_report.bat` de loc loi he thong.
 |---|---|---|
 | LK01 | O cung SSD | SSD |
 | LK02 | Thanh RAM 8GB | RAM |
-2. File docs/srs-he-thong.docx (Word)Trang 1: Trang bìa + Chèn Mục lục tự động (References $\rightarrow$ Table of Contents).Trang 2:Gán Heading 1: 1. Tong quan he thongGán Heading 2: 1.1 Muc tieu, 1.2 Danh sach thu mucTrang 3:Gán Heading 1: 2. Quan ly thiet biGán Heading 2: 2.1 Tra cuu linh kien, 2.2 Xu ly log loiModule 4: Đối Soát Bằng Excel (quan-ly-thiet-bi.xlsx)Quy tắc: Không gộp ô (Merge Cell), dòng 1 là tiêu đề, không để dòng trống.Bảng 1 (Sheet danh-muc-linh-kien): Cột A là ma_linh_kien, Cột B là ten_thiet_bi.Bảng 2 (Sheet trang-thai-tram): Cột B là ma_linh_kien, Cột C là ten_thiet_bi.Công thức tại ô C2 (kết hợp TRIM, $ và FALSE):Excel=VLOOKUP(TRIM(B2), 'danh-muc-linh-kien'!$A$2:$B$50, 2, FALSE)
-TRIM(B2): Xóa dấu cách thừa tránh lỗi #N/A.$A$2:$B$50: Dấu $ để khóa chặt bảng khi kéo công thức xuống.2: Lấy cột tên thiết bị.FALSE: Tìm kiếm chính xác 100%.
+2. File docs/srs-he-thong.docx (Word)
+- Trang 1: Trang bìa + Chèn Mục lục tự động (References $\rightarrow$ Table of Contents).
+- Trang 2:
+  - Gán Heading 1: 1. Tong quan he thong
+  - Gán Heading 2: 1.1 Muc tieu, 1.2 Danh sach thu muc
+- Trang 3:
+  - Gán Heading 1: 2. Quan ly thiet bi
+  - Gán Heading 2: 2.1 Tra cuu linh kien, 2.2 Xu ly log loi
+
+## Module 4: Đối Soát Bằng Excel (quan-ly-thiet-bi.xlsx)
+Quy tắc: Không gộp ô (Merge Cell), dòng 1 là tiêu đề, không để dòng trống.
+
+Bảng 1 (Sheet danh-muc-linh-kien): Cột A là ma_linh_kien, Cột B là ten_thiet_bi.
+
+Bảng 2 (Sheet trang-thai-tram): Cột B là ma_linh_kien, Cột C là ten_thiet_bi.
+
+Công thức tại ô C2 (kết hợp TRIM, $ và FALSE):
+```Excel
+=VLOOKUP(TRIM(B2), 'danh-muc-linh-kien'!$A$2:$B$50, 2, FALSE)
+```
+   - TRIM(B2): Xóa dấu cách thừa tránh lỗi #N/A.
+   - $A$2:$B$50: Dấu $ để khóa chặt bảng khi kéo công thức xuống.
+   - 2: Lấy cột tên thiết bị.
+   - FALSE: Tìm kiếm chính xác 100%.
